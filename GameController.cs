@@ -21,6 +21,9 @@ public class GameController
         {
             isPlaying = true;
             theLevel.SetMoveRecorder(new MoveRecorder());
+            theView.ClearForm();
+            theView.DrawGameControls();
+            theView.RedrawLevel();
         }
     }
 
