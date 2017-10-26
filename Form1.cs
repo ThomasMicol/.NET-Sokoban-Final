@@ -13,6 +13,11 @@ namespace Assignment1___Thomas_Micol
     public partial class Form1 : Form, IView
     {
         protected GameController theCtrl;
+        protected Button btn_startGame;
+        protected Button btn_newGame;
+        protected Button btn_loadGame;
+        protected List<Button> myElements = new List<Button>();
+
 
         public Form1()
         {
@@ -27,35 +32,35 @@ namespace Assignment1___Thomas_Micol
 
         public void DisplayMenu()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_startGame = new System.Windows.Forms.Button();
+            this.btn_newGame = new System.Windows.Forms.Button();
+            this.btn_loadGame = new System.Windows.Forms.Button();
 
-            this.button1.Location = new System.Drawing.Point(91, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start Game";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_startGame.Location = new System.Drawing.Point(91, 12);
+            this.btn_startGame.Name = "button1";
+            this.btn_startGame.Size = new System.Drawing.Size(93, 34);
+            this.btn_startGame.TabIndex = 0;
+            this.btn_startGame.Text = "Start Game";
+            this.btn_startGame.UseVisualStyleBackColor = true;
 
-            this.button2.Location = new System.Drawing.Point(91, 81);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "New Game";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_newGame.Location = new System.Drawing.Point(91, 81);
+            this.btn_newGame.Name = "button2";
+            this.btn_newGame.Size = new System.Drawing.Size(93, 34);
+            this.btn_newGame.TabIndex = 1;
+            this.btn_newGame.Text = "New Game";
+            this.btn_newGame.UseVisualStyleBackColor = true;
+            this.btn_newGame.Click += new System.EventHandler(this.button2_Click);
 
-            this.button3.Location = new System.Drawing.Point(91, 151);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 34);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Load Game";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_loadGame.Location = new System.Drawing.Point(91, 151);
+            this.btn_loadGame.Name = "button3";
+            this.btn_loadGame.Size = new System.Drawing.Size(93, 34);
+            this.btn_loadGame.TabIndex = 2;
+            this.btn_loadGame.Text = "Load Game";
+            this.btn_loadGame.UseVisualStyleBackColor = true;
 
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_startGame);
+            this.Controls.Add(this.btn_loadGame);
+            this.Controls.Add(this.btn_newGame);
 
         }
 
@@ -64,64 +69,24 @@ namespace Assignment1___Thomas_Micol
             theCtrl = aCtrl;
         }
 
-        public void DisplayBackground()
+        public void RedrawLevel()
         {
-            throw new NotImplementedException();
+
         }
 
-        public void DisplayClean()
+        public void DisplaySystemMessage(string msg)
         {
-            throw new NotImplementedException();
+
         }
 
-        public void DisplayDirectionArrow(Directions direction)
+        public void PlayWinningSound()
         {
-            throw new NotImplementedException();
+
         }
 
-        public void DisplayElement(Location location, Entity entity)
+        public void ClearForm()
         {
-            throw new NotImplementedException();
-        }
 
-        public void DisplayLevelGrid()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DisplayPlayerStructItem(Entity entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DisplaySystemMessage(string message)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DisplayWinScreen()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ErrorMessage(string errorMessage)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnKeyPress(object sender)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Redraw()
-        {
-            Console.Write("redrawing");
-        }
-
-        public void SoundPlayerStruckItem(Entity entity)
-        {
-            throw new NotImplementedException();
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -52,19 +52,19 @@ public class GameController
     public void MovePlayer(Directions aDir)
     {
         theLevel.MovePlayer(aDir);
-        theView.Redraw();
+        theView.RedrawLevel();
     }
 
     public void UndoMove()
     {
         theLevel.UndoMove();
-        theView.Redraw();
+        theView.RedrawLevel();
     }
 
     public void RedoMove()
     {
         theLevel.RedoMove();
-        theView.Redraw();
+        theView.RedrawLevel();
     }
 
     public bool CheckLevelComplete()
