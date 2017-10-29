@@ -3,7 +3,7 @@
 public class GameController
 {
     protected IView theView;
-    protected Level theLevel;
+    public Level theLevel;
     protected IFileHandlerAdapter fileHandlerAdapter;
     protected bool isPlaying;
 

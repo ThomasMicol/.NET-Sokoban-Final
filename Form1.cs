@@ -230,12 +230,44 @@ namespace Assignment1___Thomas_Micol
 
         public void RedrawLevel()
         {
+            SolidBrush brush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
             SolidBrush backgroundBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
-            SolidBrush groundBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
-            SolidBrush backgroundBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
-            SolidBrush backgroundBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
+            SolidBrush wallBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
+            SolidBrush floorBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
+            SolidBrush goalTileBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Gold);
+            SolidBrush boxBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
+            SolidBrush playerBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Blue);
             Graphics graphic = this.CreateGraphics();
             graphic.FillRectangle(backgroundBrush, new Rectangle(31, 20, 848, 520));
+            Level g = theCtrl.theLevel;
+            int tileWidth = 848 / g.GetRowWidth();
+            int tileHeight = 520 / g.GetColumnHeight();
+            Entity[] l = g.GetLevelData();
+            foreach(Entity e in l)
+            {
+                Location myLoc = e.GetLocation();
+                if(e.GetEntityType() == EntityTypes.Floor)
+                {
+                    brush.Color = Color.LightGray;
+                }
+                if (e.GetEntityType() == EntityTypes.Wall)
+                {
+                    brush.Color = Color.DarkGray;
+                }
+                if (e.GetEntityType() == EntityTypes.GoalTile)
+                {
+                    brush.Color = Color.Gold;
+                }
+                if (e.GetEntityType() == EntityTypes.MovableBlock)
+                {
+                    brush.Color = Color.Green;
+                }
+                if (e.GetEntityType() == EntityTypes.Player)
+                {
+                    brush.Color = Color.Blue;
+                }
+                graphic.FillRectangle(brush, new Rectangle(31 + (myLoc.x * tileWidth), 20 + (myLoc.y * tileHeight) ,tileWidth , tileHeight));
+            }
         }
 
         public void DisplaySystemMessage(string msg)

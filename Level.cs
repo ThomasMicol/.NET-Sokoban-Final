@@ -22,6 +22,17 @@ public class Level
 
     }
 
+    public int GetRowWidth()
+    {
+        return rowWidth;
+    }
+
+    public int GetColumnHeight()
+    {
+        return columnHeight;
+    }
+    
+
     public void SetMoveRecorder(IMoveRecorder aMoveRecorder)
     {
         moveRecorder = aMoveRecorder;
