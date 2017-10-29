@@ -58,7 +58,7 @@ namespace Assignment1___Thomas_Micol
             this.btn_moveUp.UseVisualStyleBackColor = true;
             this.btn_moveUp.Click += new System.EventHandler(this.moveUp_Click);
 
-            this.btn_moveLeft.Location = new System.Drawing.Point(760 + 60, 602);
+            this.btn_moveLeft.Location = new System.Drawing.Point(760 - 60, 602);
             this.btn_moveLeft.Size = new System.Drawing.Size(58, 34);
             this.btn_moveLeft.Text = "LEFT";
             this.btn_moveLeft.UseVisualStyleBackColor = true;
@@ -70,37 +70,37 @@ namespace Assignment1___Thomas_Micol
             this.btn_moveDown.UseVisualStyleBackColor = true;
             this.btn_moveDown.Click += new System.EventHandler(this.moveDown_Click);
 
-            this.btn_moveRight.Location = new System.Drawing.Point(760 - 60, 602);
+            this.btn_moveRight.Location = new System.Drawing.Point(760 + 60, 602);
             this.btn_moveRight.Size = new System.Drawing.Size(58, 34);
             this.btn_moveRight.Text = "RIGHT";
             this.btn_moveRight.UseVisualStyleBackColor = true;
             this.btn_moveRight.Click += new System.EventHandler(this.moveRight_Click);
 
-            this.btn_undoMove.Location = new System.Drawing.Point(760, 602);
+            this.btn_undoMove.Location = new System.Drawing.Point(760 - 140, 602);
             this.btn_undoMove.Size = new System.Drawing.Size(58, 34);
             this.btn_undoMove.Text = "Undo";
             this.btn_undoMove.UseVisualStyleBackColor = true;
             this.btn_undoMove.Click += new System.EventHandler(this.undoMove_Click);
 
-            this.btn_redoMove.Location = new System.Drawing.Point(91, 151);
-            this.btn_redoMove.Size = new System.Drawing.Size(93, 34);
+            this.btn_redoMove.Location = new System.Drawing.Point(760 - 140, 602 - 36);
+            this.btn_redoMove.Size = new System.Drawing.Size(58, 34);
             this.btn_redoMove.Text = "Redo";
             this.btn_redoMove.UseVisualStyleBackColor = true;
             this.btn_redoMove.Click += new System.EventHandler(this.redoMove_Click);
 
-            this.btn_resetLevel.Location = new System.Drawing.Point(91, 12);
+            this.btn_resetLevel.Location = new System.Drawing.Point(131, 602 - 36);
             this.btn_resetLevel.Size = new System.Drawing.Size(93, 34);
             this.btn_resetLevel.Text = "Reset Level";
             this.btn_resetLevel.UseVisualStyleBackColor = true;
             this.btn_resetLevel.Click += new System.EventHandler(this.resetLevel_Click);
 
-            this.btn_saveState.Location = new System.Drawing.Point(91, 151);
+            this.btn_saveState.Location = new System.Drawing.Point(131, 602);
             this.btn_saveState.Size = new System.Drawing.Size(93, 34);
             this.btn_saveState.Text = "Save Game";
             this.btn_saveState.UseVisualStyleBackColor = true;
             this.btn_saveState.Click += new System.EventHandler(this.saveGame_Click);
 
-            this.btn_exit.Location = new System.Drawing.Point(91, 151);
+            this.btn_exit.Location = new System.Drawing.Point(31, 602);
             this.btn_exit.Size = new System.Drawing.Size(93, 34);
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = true;
@@ -230,7 +230,12 @@ namespace Assignment1___Thomas_Micol
 
         public void RedrawLevel()
         {
-
+            SolidBrush backgroundBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
+            SolidBrush groundBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
+            SolidBrush backgroundBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
+            SolidBrush backgroundBrush = new System.Drawing.SolidBrush(System.Drawing.Color.White);
+            Graphics graphic = this.CreateGraphics();
+            graphic.FillRectangle(backgroundBrush, new Rectangle(31, 20, 848, 520));
         }
 
         public void DisplaySystemMessage(string msg)
